@@ -1,0 +1,175 @@
+.category-row
+	@include xl
+		&__wrapper
+			padding-bottom: 25px
+
+.category-content
+	padding-top: 3px
+
+.category-header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-top: 3px
+	padding: 3px 15px 0 20px
+
+	&__dropdown
+		display: none
+		position: absolute
+		right: 0
+		top: 97%
+		width: 100%
+		background-color: $bg-dark
+		z-index: 10
+		padding: 0
+		list-style: none
+		color: $text-white
+		padding: 27px 20px
+		
+		@include sm
+			right: 20px
+			max-width: 305px
+	
+		&_active
+			display: block
+
+	&__dropdown_link
+		padding: 10px 0
+		display: block
+		width: 100%
+		font-weight: $semi-bold
+		font-size: 15px
+		line-height: 18px
+		
+		&:hover
+			color: $accent
+			text-decoration: none
+
+		&-lg
+			font-size: 20px
+			line-height: 24px
+
+		&-md
+			font-size: 15px
+			line-height: 18px
+		
+		&-sm
+			font-size: 12px
+			line-height: 15px
+		
+	&__btn
+		//padding: 14px 10px 19px 15px
+		display: flex
+		align-items: center
+		font-weight: $semi-bold
+		font-size: 12px
+		line-height: 15px
+		text-transform: uppercase
+		border: none
+		background: none
+		outline: none
+		cursor: pointer
+		padding: 13px 11px 19px 15px
+
+		@include lg
+			padding: 25px
+
+		&:focus
+			outline: none
+
+		&_active
+			background-color: $bg-dark
+			color: $text-white
+			.category-header__btn_arrow
+				background: url('../img/icons/close.svg') no-repeat 50% 50% / 14px auto
+				background-color: $bg-dark
+	
+			svg
+				display: none
+
+	&__title
+		margin-right: 10px
+		@include lg
+			display: none
+
+	&__btn_arrow
+		display: flex
+		justify-content: center
+		align-items: center
+		border: none
+		padding: 0
+		border-radius: $radius
+		outline: none
+		background: none
+		cursor: pointer
+		flex-shrink: 2
+		width: 18px
+		height: 18px
+		background-color: #272727
+		&:focus
+			outline: none
+		&.active
+			svg
+				transform: rotate(180deg)
+		.icon-thin-drop-arrow
+			font-size: 6px
+			line-height: 1.2
+			stroke: #fff
+	
+.category-row_tags
+	margin: 0
+	
+	@include lg
+		border-bottom: 1px solid rgba(17, 17, 17, 0.15)
+
+	@include xl
+		//margin-bottom: 25px
+
+	@include xl
+		border: none
+
+	.category-row__heading
+		padding: 0
+		
+.tags-row
+	display: none
+	align-items: center
+	padding: 0
+	list-style: none
+	margin: 0
+	
+	@include lg
+		display: flex
+
+	li
+		display: inline-block
+		line-height: 1
+
+	&__link
+		display: inline-block
+		font-size: 12px
+		line-height: 14px
+		color: $text-black
+		text-transform: uppercase
+		font-weight: $bold
+		padding: 0 14px
+		padding-top: 28px
+		padding-bottom: 28px
+		position: relative
+
+		&_active
+			
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 50%
+				transform: translateX(-50%)
+				height: 6px
+				width: 100%
+				background: linear-gradient(to right, $bg-dark, $bg-dark) no-repeat 50% 100% / 36px 6px
+
+		&:hover
+			text-decoration: none
+			color: $accent
+			

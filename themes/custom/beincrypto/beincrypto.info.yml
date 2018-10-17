@@ -1,0 +1,10 @@
+name: beincrypto
+description: Beincrypto theme
+type: theme
+core: 8.x
+libraries:
+ - beincrypto/global-css
+ - beincrypto/global-js
+stylesheets-remove:
+ - core/themes/stable/css/views/views.module.css
+ - core/themes/stable/css/system/components/align.module.css

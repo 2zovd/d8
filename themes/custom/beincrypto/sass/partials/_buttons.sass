@@ -1,0 +1,110 @@
+.btn
+	background: none
+	border: none
+	text-align: center
+	vertical-align: middle
+	cursor: pointer
+	outline: none
+	transition: all .05s
+	text-decoration: none
+	&:hover,
+	&:active,
+	&:focus
+		outline: none
+		text-decoration: none
+
+.btn-main
+	display: inline-block
+	font-weight: $bold
+	text-transform: uppercase
+	padding: 15px 0 16px
+	border-radius: $radius
+	font-size: 15px
+	line-height: 18px
+	min-width: 200px
+	&_default
+		background-color: $bg-dark
+		color: $text-white
+		&:hover
+			opacity: 0.8
+	&_default-reverse
+		background-color: transparent
+		border: 1px solid $bg-dark
+		color: $text-black
+		&:hover
+			opacity: 0.8
+	&_accent
+		background-color: $accent
+		color: $text-black
+		&:hover
+			background-color: $accent-hover
+	&_accent-reverse
+		background-color: transparent
+		border: 1px solid $accent
+		color: $accent
+		&:hover
+			color: $text-black
+			background-color: $accent-hover
+			border-color: $accent-hover
+	&_unactive
+		opacity: 0.3
+		pointer-events: none
+	&_text
+		color: $accent
+		background-color: transparent
+		&:hover
+			color: $accent-hover
+	&_center
+		margin: 0 auto
+
+.btn-posts
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 100%
+	padding: 15px 0 16px
+	border-radius: $radius
+	font-size: 15px
+	line-height: 18px
+	font-weight: $semi-bold
+	color: $text-grey-dark
+	background: none
+	border: none
+	min-width: 200px
+	text-align: center
+	vertical-align: middle
+	cursor: pointer
+	outline: none
+	transition: all .05s
+	background-color: rgba(224, 224, 224, 0.5)
+	margin-bottom: 19px
+	&:hover, 
+	&:active,
+	&:focus
+		outline: none
+		text-decoration: none
+	&:hover
+		background-color: #e0e0e0
+		color: rgba(17, 17, 17, 0.5)
+	svg
+		margin-right: 10px
+		font-size: 20px
+		color: #222
+		opacity: .15
+
+.btn-subscribe
+	width: 100%
+	background-color: #333
+	color: $text-white
+	border: none
+	&:hover
+		opacity: 0.8
+	@include sm
+		border-radius: 0 $radius $radius 0
+	@include xl
+		border-radius: $radius
+		max-width: 170px
+
+.btn-refresh svg
+	font-size: 19px
+	line-height: 1

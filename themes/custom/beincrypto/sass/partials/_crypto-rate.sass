@@ -1,0 +1,193 @@
+
+//crypto rate
+.crypto-rate
+	background-color: $bg-dark
+	color: $text-grey-light
+	font-size: 12px
+	line-height: 14px
+	border-bottom: 1px solid $border-dark
+
+	@include lg
+		border-bottom: 1px solid $border-light
+
+	@include xl
+		//display: none
+
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		padding-right: 30px
+		position: relative
+		overflow: hidden
+		height: 31px
+		@include sm
+			height: 40px
+		@include lg
+			flex-wrap: wrap
+			padding: 0
+			padding-right: 50px
+			height: 60px
+
+		&.active
+			height: auto
+			.crypto-rate
+				&__item
+					display: flex
+			.crypto-rate__percent
+				display: flex
+	
+	&__content
+		display: flex
+		@include lg
+			flex-direction: column
+
+	&__item
+		display: flex
+		flex-grow: 1
+		border-bottom: 1px solid $border-dark
+		padding: 7px 2px 10px
+		
+		&:nth-child(n+4)
+			display: none
+		@include sm
+			display: flex
+			flex-grow: 1
+			width: auto
+			border-bottom: none
+			border-right: 1px solid $border-dark
+			flex-grow: 1
+			align-items: center
+			justify-content: center
+			padding: 13px 2px 15px
+			&:first-child
+				border-left: 1px solid $border-dark
+			&:nth-child(n+4)
+				display: flex
+			&:nth-child(n+7)
+				display: none
+		@include rwd(400)
+			&:nth-child(n+5)
+				display: flex
+		@include lg
+			border-right: 1px solid $border-light
+			&:first-child
+				border-left: 1px solid $border-light
+			&:nth-child(n+7)
+				display: none
+
+	&__item_arrow
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		right: 0
+		bottom: 7px
+		border: none
+		border-bottom: 1px solid $border-dark
+		border-right: 1px solid $border-dark
+		border-radius: $radius
+		padding: 0
+		outline: none
+		background: none
+		cursor: pointer
+		flex-shrink: 2
+		width: 20px
+		height: 20px
+		background-color: #272727
+		&:focus
+			outline: none
+		&.active
+			svg
+				transform: rotate(180deg)
+		@include lg
+			border-color: $border-light
+			//position: static
+			width: auto
+			height: 100%
+			right: 0
+			top: 0
+			padding: 0 15px
+			background: none
+		.icon-thin-drop-arrow
+			font-size: 8px
+			line-height: 1.2
+			border-radius: 2px
+			stroke: #fff
+			@include lg
+				font-size: 10px
+				background-color: transparent
+	
+	&__title_full
+		display: none
+		@include lg
+			display: inline-block
+
+	&__title_short
+		margin-right: 5px
+		@include lg
+			display: none
+
+	&__icon
+		display: none
+		max-width: 50px
+		flex-shrink: 0
+		img,
+		svg
+			display: inline-block
+			max-width: 100%
+			height: auto
+		@include lg
+			display: inline-block
+			margin-right: 8px
+
+	&__title
+		display: block
+		font-weight: $medium
+		text-transform: uppercase
+		@include lg
+			font-weight: $bold
+			margin-bottom: 2px
+
+	&__index
+		display: flex
+		flex-direction: column
+		@include lg
+			flex-direction: row
+			span
+				margin-right: 8px
+	
+	&__indicator
+		display: inline-block
+		svg
+			width: 7px
+			height: 8px
+		@include lg
+			display: none
+
+	&__index_grow
+		.crypto-rate
+			&__amount,
+			&__percent
+				color: $green
+			&__indicator svg
+				stroke: $green
+			@include lg
+				&__amount
+					color: $text-grey-light
+	&__index_fall
+		.crypto-rate
+			&__amount,
+			&__percent
+				color: $red
+			&__indicator svg
+				stroke: $red
+				transform: rotate(90deg)
+			@include lg
+				&__amount
+					color: $text-grey-light
+	
+	&__percent
+		display: none
+		@include lg
+			display: inline-block

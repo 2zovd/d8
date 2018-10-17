@@ -1,0 +1,65 @@
+.latest-news
+	background-color: $bg-second
+	//padding-top: 22px
+	padding-bottom: 16px
+	display: flex
+	flex-direction: column
+
+	&__header
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		//margin-bottom: 10px
+		padding-top: 22px
+		padding-bottom: 15px
+
+		&_top-news
+			display: none
+			@include xl
+				display: flex
+
+		.category-row__heading
+			margin: 0
+			padding: 0
+			
+	.post
+		position: relative
+		padding-top: 13px
+		padding-bottom: 12px
+		&:after
+			content: ''
+			position: absolute
+			right: 0
+			top: 0
+			color: #e0e0e0
+			font-size: 60px
+			line-height: 1
+			font-weight: $extra-bold
+			z-index: 1
+
+		&__content
+			position: relative
+			z-index: 2
+
+	&__inner
+		@include lg
+			max-height: 625px
+			overflow-y: hidden
+
+
+@for $i from 0 through 30
+	$n: $i + 1
+
+	.latest-news__inner .post
+		&:nth-child(#{$n})
+			border-bottom: 1px solid #e0e0e0
+			&:after
+				content: '#{$n}'
+
+.news-column
+	display: none
+	&.active
+		display: flex
+	@include lg
+		display: flex

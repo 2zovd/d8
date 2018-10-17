@@ -1,0 +1,146 @@
+.footer
+	background-color: $bg-dark
+	padding: 30px 0 27px
+
+	&__copyrights
+		display: block
+		color: $border-light
+		font-size: 12px
+		line-height: 14px
+		text-align: center
+		@include xl
+			margin-bottom: 0
+
+	&__logo
+		display: block
+		
+		svg
+			max-width: 100%
+			color: #fff
+			font-size: 133px
+
+	&__nav
+		display: flex
+		flex-direction: column
+		margin-bottom: 33px
+		list-style: none
+		padding: 0
+		@include sm
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: center
+		@include xl
+			justify-content: flex-start
+			margin-bottom: 10px
+
+		&_link
+			display: block
+			text-align: center
+			text-transform: uppercase
+			font-size: 15px
+			line-height: 18px
+			color: rgba(255,255,255,.5)
+			transition: all .15s
+			&:hover
+				color: rgba(255,255,255,.7)
+				text-decoration: none
+			@include sm
+				margin: 0 10px 15px 10px
+			@include xl
+				margin-left: 0
+	
+		li
+			display: block
+			margin-bottom: 11px
+			@include xl
+				margin-bottom: 0
+
+	&__nav_wrap
+		@include xl
+			padding-top: 16px
+
+	&__social
+		width: 100%
+		margin-bottom: 15px
+		text-align: center
+		transition: all .15s
+		list-style: none
+		padding: 0
+		@include sm
+			margin-bottom: 25px
+		@include xl
+			display: inline-block
+			width: auto
+			margin-bottom: 0
+			margin-right: 30px
+
+		li
+			display: inline-block
+			margin: 0 5px
+
+		&_link
+			display: inline-block
+			svg
+				font-size: 31px
+	
+		&_icon
+			fill: rgba(255,255,255,.2)
+			&:hover
+				fill: rgba(255,255,255,.5)
+
+	&__bottom
+		display: flex
+		flex-direction: column
+		border-radius: $radius
+		margin-left: -10px
+		@include xl
+			flex-direction: row
+			align-items: center
+			justify-content: flex-start
+
+.subscribe
+	
+	&__wrapper
+		@include xl
+			padding-left: 85px
+			padding-top: 16px
+
+	&__heading
+		display: block
+		font-weight: 900
+		font-size: 15px
+		line-height: 18px
+		text-align: center
+		margin-bottom: 15px
+		color: $text-white
+		@include sm
+			font-size: 20px
+			line-height: 24px
+			margin-bottom: 21px
+		@include xl
+			text-align: left
+			color: #e0e0e0
+			margin-bottom: 18px
+
+	&__field
+		width: 100%
+		font-size: 15px
+		line-height: 18px
+		background-color: #fff
+		border-radius: $radius
+		margin-bottom: 9px
+		padding: 15px 15px 16px 22px
+		font-weight: bold
+		border: none
+		@include sm
+			margin: 0
+			border-radius: $radius 0 0 $radius
+		::placeholder
+			color: rgba(146,146,146,.5)
+
+	&__form
+		margin-bottom: 41px
+		@include sm
+			display: flex
+		@include xl
+			margin-bottom: 0

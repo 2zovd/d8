@@ -1,0 +1,258 @@
+.main-nav,
+.profile-nav
+	display: none
+	flex-wrap: nowrap
+	flex-grow: 1
+	margin: 0 10px
+	padding: 0
+	list-style: none
+	line-height: 1
+
+	@include sm
+		display: flex
+
+	li
+		display: flex
+		align-items: center
+		line-height: 1
+
+	&__link
+		display: inline-block
+		color: $text-white
+		font-weight: $bold
+		font-size: 15px
+		line-height: 1.2
+		text-transform: uppercase
+		margin: 0 10px
+		position: relative
+		padding: 16px 0
+
+		&:hover
+			text-decoration: none
+			color: $accent
+			.main-nav__link_circle
+				background-color: $accent
+	
+	&__link_active
+		color: $accent
+
+		&:after
+			content: ''
+			position: absolute
+			bottom: -1px
+			left: 50%
+			transform: translateX(-50%)
+			width: 100%
+			height: 4px
+			background-color: $accent
+
+		&.active
+			position: relative
+			color: $accent
+
+			&:after
+				position: absolute
+				bottom: -4px
+				left: 0
+				width: 100%
+				height: 4px
+				background: linear-gradient(to right, $accent, $accent) no-repeat 0 0 / 100% 4px
+
+	&__link_logout
+		color: #828282
+
+	&__link_notification
+		display: inline-block
+		background-color: $accent
+		width: 16px
+		height: 16px
+		border-radius: 100%
+		text-align: center
+		padding-top: 3px
+		font-size: 12px
+		line-height: 1
+		font-weight: $regular
+		color: $text-black
+		margin-left: 5px
+		
+	&__link_dots
+		display: flex
+		align-items: center
+		justify-content: center
+	
+	&__link_circle
+		width: 4px
+		height: 4px
+		background-color: #fff
+		border-radius: 100%
+		margin: 1px
+
+.main-nav,
+.profile-nav
+	
+	&.main-nav_active,
+	&.profile-nav_active,
+		position: fixed
+		display: flex
+		flex-direction: column
+		background-color: $bg-dark
+		left: 0
+		top: 50px
+		width: 100%
+		color: $text-white
+		z-index: 10
+		margin: 0
+		padding: 0 18px
+		
+		li
+			display: block
+
+		.main-nav__link
+			display: block
+			padding: 12px 0
+			width: 100%
+			margin: 0
+			font-size: 20px
+			line-height: 24px
+
+		.main-nav__drop
+			display: flex
+			flex-direction: column
+
+	&.profile-nav_active
+		padding: 19px 0 23px
+		li
+			width: 100%
+			max-width: 1140px
+			margin: 0 auto
+			padding: 0 20px
+
+.profile-nav
+	display: none
+
+	.main-nav__link
+		font-weight: $semi-bold
+
+.btn-nav
+	position: relative
+	width: 24px
+	height: 20px
+	cursor: pointer
+	background: linear-gradient(to left, #fff, #fff) no-repeat 0 50% / 100% 2px
+	@include sm
+		display: none
+
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		width: 100%
+		height: 2px
+		background: linear-gradient(to left, #fff, #fff) no-repeat 0 50% / 100% 2px
+		transform: translateX(-50%)
+		transition: all .3s
+
+	&:before
+		top: 0
+
+	&:after
+		top: 100%
+		transform: translate(-50%, -100%)
+
+	&.active
+		background: none
+
+		&:before
+			transform: translate(-50%, -50%) rotate(-45deg)
+			top: 50%
+
+		&:after
+			transform: translate(-50%, -50%) rotate(45deg)
+			top: 50%
+
+.main-nav__drop
+	display: none
+	list-style: none
+	padding: 0
+	padding-left: 15px
+
+	a
+		color: $text-grey-light
+		display: block
+		text-transform: uppercase
+		font-size: 15px
+		line-height: 18px
+		font-weight: $semi-bold
+		padding: 4px 0
+		&:hover
+			color: $accent
+			text-decoration: none
+
+.main-nav__footer
+	display: none
+	padding-top: 40px
+	padding-bottom: 20px
+	background: url('../img/icons/portrait.svg') no-repeat 99% 100% / auto
+
+	&_active
+		display: flex
+		flex-direction: column
+
+		.header-settings__lang
+			border: none
+			padding: 0
+
+		.header-settings__lang_select
+			display: block
+			margin: 0
+
+			span
+				display: inline-block
+				text-transform: uppercase
+				font-size: 15px
+				line-height: 18px
+				font-weight: $semi-bold
+	
+	&_lang
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 40px
+		text-transform: uppercase
+		font-size: 15px
+		line-height: 18px
+		font-weight: $semi-bold
+
+	&_profile
+		width: 100%
+		text-transform: uppercase
+		font-size: 15px
+		line-height: 18px
+		font-weight: $semi-bold
+		a
+			display: inline-block
+			color: $accent
+
+	.header-settings__lang_select
+		font-size: 15px
+		line-height: 18px
+
+.btn-search
+	display: none
+	background: none
+	border: none
+	outline: none
+	cursor: pointer
+	padding: 0
+	line-height: 1
+
+	svg
+		font-size: 24px
+		color: $text-white
+
+	&_active
+		display: block
+		
+

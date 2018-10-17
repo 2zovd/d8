@@ -1,0 +1,45 @@
+.main-banner
+	background: #000 url('../img/banner.jpg') no-repeat 0 0 / cover
+
+	&__inner
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		padding: 78px 0 70px
+		@include sm
+			padding: 34px 0 38px
+		@include lg
+			flex-direction: row
+			justify-content: center
+			align-items: center
+
+	&__heading,
+	&__subheading
+		display: block
+		color: $text-white
+		font-weight: $semi-bold
+		text-transform: uppercase
+
+	&__heading
+		font-size: 30px
+		line-height: 37px
+
+	&__subheading
+		font-size: 15px
+		line-height: 18px
+		margin-bottom: 40px
+		@include sm
+			margin-bottom: 25px
+
+	&__content
+		display: flex
+		align-items: center
+		flex-direction: column
+		@include lg
+			margin-right: 150px
+
+.icon-speedometer
+	stroke: $accent
+	max-width: 50px
+	margin-bottom: 7px

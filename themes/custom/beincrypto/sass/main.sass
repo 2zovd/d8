@@ -1,0 +1,71 @@
+@import "helpers/vars"
+@import "partials/fonts"
+@import "partials/libs"
+@import "partials/media"
+@import "partials/sprite"
+
+::placeholder
+	color: rgba(146,146,146,.5)
+
+::selection
+	background-color: $accent
+	color: #fff
+
+*
+	box-sizing: border-box
+
+body
+	position: relative
+	min-width: 320px
+	font-size: 20px
+	line-height: 1.7
+	font-weight: $regular
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text-black
+	padding-top: 51px
+	@include lg
+		padding-top: 0
+	input, textarea
+		border: #555 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+a,
+a:hover
+	color: inherit
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.main-content
+	padding-bottom: 19px
+	@include xl
+		padding-top: 60px
+
+@import 'partials/header'
+@import 'partials/crypto-rate'
+@import 'partials/footer'
+@import 'partials/search'
+@import 'partials/post'
+@import 'partials/banner'
+@import 'partials/buttons'
+@import 'partials/latest'
+@import 'partials/uikit'
+@import 'partials/nav'
+@import 'partials/category'
+@import 'partials/article'
+@import 'partials/comments'

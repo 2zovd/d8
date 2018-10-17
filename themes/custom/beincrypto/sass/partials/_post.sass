@@ -1,0 +1,403 @@
+.post
+	display: flex
+	flex-direction: column
+	border-bottom: 1px solid #e0e0e0
+	@include sm
+		border-bottom: none
+
+	&.post_default
+		padding: 14px 0 10px
+		@include sm
+			padding: 0 0 20px 0
+
+	&.post_featured
+		padding: 20px 0 14px
+		@include sm
+			padding: 23px 0 20px 0
+			@include xl
+				padding-top: 0
+	
+		&_lg
+			@include lg
+				padding: 23px 0 20px 0
+				padding-top: 0
+	
+		&_default-sm
+			@include sm
+				padding: 0 0 20px 0
+	
+	&__image
+		display: none
+		flex-shrink: 0
+		img
+			display: inline-block
+			width: 100%
+			height: auto
+
+		&_video
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				width: 20px
+				height: 20px
+				background-color: $bg-main
+				border-radius: 0 0 0 $radius
+				background-image: url('../img/icons/play.svg')
+				background-repeat: no-repeat
+				background-size: 10px 10px
+				background-position: 50% 50%
+				@include sm
+					width: 40px
+					height: 40px
+					background-size: 20px
+	
+		&_video-nav
+			position: absolute
+			display: flex
+			left: 11px
+			top: 11px
+			font-size: 10px
+			height: 12px
+			font-family: $roboto
+
+		&_video-live,
+		&_video-time
+			display: inline-block
+			padding: 5px
+			color: $text-white
+			border-radius: $radius
+			width: 50px
+			height: 20px
+			display: flex
+			align-items: center
+			justify-content: center
+
+		&_video-live
+			background-color: $video
+			position: relative
+			text-transform: uppercase
+			margin-right: 6px
+			padding-left: 7px
+			i
+				display: inline-block
+				font-style: normal
+				vertical-align: middle
+			&:before
+				content: ''
+				display: inline-block
+				width: 10px
+				height: 10px
+				background-color: $text-white
+				border-radius: 100%
+				margin-right: 4px
+				vertical-align: middle
+		&_video-time
+			background-color: rgba(0,0,0,.5)
+
+	&__heading
+		font-weight: $semi-bold
+		margin-bottom: 7px
+		font-size: 15px
+		line-height: 18px
+		&:hover
+			text-decoration: none
+			color: $accent
+
+	&__content
+		display: flex
+		flex-direction: column
+
+	&__footer
+		display: flex
+
+	&__category,
+	&__time
+		display: inline-block
+		font-size: 10px
+		line-height: 12px
+		font-family: $roboto
+		font-weight: $regular
+		@include sm
+			font-size: 12px
+			line-height: 14px
+
+	&__category
+		text-transform: uppercase
+		margin-right: 8px
+
+	&__time
+		color: $text-grey-light
+
+	&_last
+		border-bottom: none
+
+	&-wrapper
+	
+		&:nth-child(n+4)
+			.post__image
+				//display: none
+	
+			@include sm
+				.post__image
+					//display: block
+	
+		@include sm
+			&:nth-child(n+6)
+				//display: none
+	
+		@include xl
+			&:nth-child(n+6)
+				//display: flex
+	
+			&:nth-child(n+7)
+				//display: none
+	
+// post types
+.post-category
+	
+	&_news 
+		.post__category
+			color: $news
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $news, $news)
+	
+	&_analysis 
+		.post__category
+			color: $analysis
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $analysis, $analysis)
+	
+	&_exclusive
+		.post__category
+			color: $exclusive
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $exclusive, $exclusive)
+	
+	&_wiki
+		.post__category
+			color: $wiki
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $wiki, $wiki)
+	
+	&_events 
+		.post__category
+			color: $events
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $events, $events)
+	
+	&_video 
+		.post__category
+			color: $video
+		.category-row__heading_bg
+			&:before
+				display: inline-block
+				position: static
+				background-image: url('../img/icons/video.svg')
+				background-size: contain
+				width: 16px
+				height: 15px
+				margin-right: 8px
+	
+	&_editor 
+		.post__category
+			color: $editor
+		.category-row__heading_bg
+			&:before
+				background-image: linear-gradient(to bottom, $editor, $editor)
+	
+// tags color
+.text-color
+	
+	&_news
+		color: $news
+	
+	&_analysis
+		color: $analysis
+	
+	&_exclusive
+		color: $exclusive
+	
+	&_wiki
+		color: $wiki
+	
+	&_events
+		color: $events
+	
+	&_video
+		color: $video
+	
+	&_editor
+		color: $editor
+
+// posts types
+.posts
+	
+	&_video
+		background-color: $bg-second
+		.post_featured
+			border-bottom: none
+
+
+.post_default
+	//padding: 14px 0 10px
+	flex-direction: row
+	@include sm
+		flex-direction: column
+
+	.post
+		&__heading
+			font-size: 15px
+			line-height: 18px
+			margin-bottom: 5px
+			@include sm
+				margin-bottom: 10px
+	
+		&__content
+		&__image
+			max-width: 100px
+			margin-right: 14px
+			@include sm
+				max-width: 100%
+				margin-right: 0
+				margin-bottom: 11px
+
+.post_default-video
+	//padding: 14px 0 10px
+	border: none
+	flex-direction: column
+	margin-bottom: 15px
+
+	.post
+		&__heading
+			font-size: 12px
+			line-height: 15px
+			margin-bottom: 5px
+			@include sm
+				font-size: 15px
+				line-height: 18px
+	
+		&__content
+		&__image
+			margin-bottom: 10px
+
+.post_featured
+	//padding: 20px 0 14px
+
+	.post
+		&__heading
+			font-size: 20px
+			line-height: 24px
+		&__image
+			margin-bottom: 8px
+			&_video
+				&:after
+					width: 40px
+					height: 40px
+					background-size: 20px
+	
+		@include sm
+			&__heading
+				font-size: 25px
+				line-height: 30px
+				margin-bottom: 12px
+			&__image
+				margin-bottom: 10px
+
+	&_lg
+		@include lg
+			.post
+				&__heading
+					font-size: 25px
+					line-height: 30px
+					margin-bottom: 12px
+				&__image
+					margin-bottom: 10px
+	&_default-sm
+		@include sm
+	
+			.post
+	
+				&__image
+					max-width: 100%
+					margin-right: 0
+					margin-bottom: 11px
+	
+				&__heading
+					font-size: 15px
+					line-height: 18px
+					margin-bottom: 5px
+
+.category-row
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-top: 16px
+	@include sm
+		margin-bottom: 17px
+	&__heading
+		text-transform: uppercase
+		font-size: 20px
+		line-height: 24px
+		font-weight: $semi-bold
+		position: relative
+		padding: 5px 0
+		&:before
+			content: ''
+			position: absolute
+			left: -20px
+			top: 0
+			width: 4px
+			height: 100%
+			background-repeat: no-repeat
+			background-position: 0 0
+			background-size: 4px 100%
+
+	&__link
+		display: none
+		position: relative
+		align-items: center
+		font-weight: $regular
+		font-size: 15px
+		line-height: 18px
+		text-decoration: none
+		color: $text-grey-light
+		@include sm
+			margin-left: 29px
+			display: flex
+
+		&:first-child
+			margin-left: 0
+
+		&:last-child
+			display: flex
+			padding-left: 20px
+			margin-left: 25px
+			@include sm
+				background: linear-gradient(to bottom, $text-grey-light, $text-grey-light) no-repeat 0 50% / 1px 12px
+			&:after
+				content: ''
+				display: inline-block
+				margin-left: 12px
+				width: 14px
+				height: 6px
+				background: url('../img/icons/direction-arrow.svg') no-repeat 0 0 / contain
+	
+	&__list
+		list-style: none
+		padding: 0
+		display: flex
+		align-items: center
+		//position: relative
+	
+
+
+
+

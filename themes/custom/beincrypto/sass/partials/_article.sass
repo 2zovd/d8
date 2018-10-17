@@ -1,0 +1,236 @@
+.article
+	
+	&__tags
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 14px
+		font-family: $roboto
+		font-weight: $regular
+		color: #222
+		margin: 0
+		padding: 30px 0 16px
+		
+		li
+			display: inline-block
+
+	&__tags-row
+		display: flex
+		align-items: center
+		list-style: none
+		padding: 0
+	
+	&__tags-link
+		margin-right: 18px
+		display: inline-block
+
+	&__title
+		font-size: 30px
+		line-height: 36px
+		color: #222
+		font-weight: $bold
+		margin-bottom: 21px
+
+	&__info
+		display: flex
+		align-items: center
+		margin-bottom: 15px
+
+	&__header
+		display: flex
+		flex-direction: column
+		font-size: 15px
+		line-height: 18px
+		font-weight: $medium
+
+	&__author
+		display: flex
+		align-items: center
+		text-decoration: none
+		outline: none
+
+		&_photo
+			display: inline-block
+			margin-right: 15px
+			width: 24px
+			height: 24px
+			overflow: hidden
+			border-radius: 100%
+			position: relative
+			flex-shrink: 0
+
+			img
+				display: inline-block
+				max-width: 100%
+				height: auto
+				position: absolute
+				transform: translate(-50%,-50%)
+				left: 50%
+				top: 50%
+	
+		&_name
+			display: inline-block
+			margin-right: 26px
+
+	&__time
+		color: #222
+		opacity: 0.3
+
+	&__social
+		display: flex
+		align-items: center
+		margin-bottom: 40px
+
+	&__ico-item
+		color: #222
+		opacity: .3
+		display: flex
+		align-items: center
+	
+		&:last-child
+			padding-left: 20px
+			background: linear-gradient(to bottom, #222, #222) no-repeat 0 50% / 1px 20px
+	
+		&_img
+			margin-right: 6px
+
+			svg
+				font-size: 20px
+				opacity: .3
+		
+		&_text
+			display: inline-block
+			font-size: 15px
+			line-height: 18px
+			font-weight: $medium
+			margin-right: 15px
+
+	&__banner
+
+		&_img
+			display: none
+			width: 100%
+			height: auto
+			margin-bottom: 22px
+
+		&_sm
+			display: block
+			@include sm
+				display: none
+	
+		&_md
+			display: none
+			@include sm
+				display: block
+			@include md
+				display: none
+		
+		&_lg
+			display: none
+			@include md
+				display: block
+	
+	&__content
+		margin-bottom: 50px
+		
+		&_comment
+			display: block
+			text-align: center
+			font-weight: $regular
+			color: #828282
+			margin-bottom: 33px
+			font-size: 15px
+			line-height: 27px
+
+	&__paragraph
+		display: block
+		font-size: 18px
+		line-height: 30px
+	
+		&_list
+			padding-left: 21px
+			li
+				padding-left: 20px
+				margin-bottom: 16px
+	
+		&_title
+			margin-bottom: 20px
+	
+		&_title-big
+			font-weight: $bold
+			font-size: 25px
+			line-height: 45px
+			margin-bottom: 30px
+
+			@include sm
+				font-size: 30px
+				line-height: 54px
+	
+	&__paragraph_tip
+		display: block
+		color: #828282
+		font-size: 25px
+		line-height: 37px
+		font-weight: $font-light
+		font-style: italic
+		position: relative
+		margin-bottom: 35px 
+
+		&:before
+			content: ''
+			position: absolute
+			left: -20px
+			top: 0
+			height: 100%
+			width: 4px
+			background-color: $accent
+
+	&__share
+		display: flex
+		justify-content: space-between
+		margin-bottom: 35px
+
+		&_btn
+			background: none
+			border: none
+			padding: 0
+			cursor: pointer
+			outline: none
+			line-height: 1
+			svg
+				opacity: 0.15
+			&:hover
+				outline: none
+				svg
+					opacity: 1
+					color: $accent
+					fill: $accent
+			&:focus
+				outline: none
+
+		&_holder
+			display: flex
+			align-items: center
+
+		&_text
+			margin: 0 10px
+			font-size: 15px
+			line-height: 1
+			color: $text-black
+			text-transform: uppercase
+			opacity: .3
+			font-weight: $bold
+
+		&_item
+			display: flex
+			align-items: center
+			
+			svg
+				font-size: 30px
+		
+
+	
+				
+
+			
+				
+				
